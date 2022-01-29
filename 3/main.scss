@@ -1,0 +1,20 @@
+@mixin change($x, $y, $pseudo:false) {
+  width: ($x / $y) *1%;
+  height: $x;
+  padding-top: $y;
+  background-color: #5e4af3;
+
+  @if $pseudo {
+    &:hover{
+      background-color: #a29bfe;
+    }
+    
+  }
+}
+
+.box-1 {
+  @include change(200%, 2%, $pseudo: false);
+}
+.box-2 {
+  @include change(200%, 2%, $pseudo: true);
+}
